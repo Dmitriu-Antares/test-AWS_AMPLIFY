@@ -1,6 +1,6 @@
 const environment = {
     development: {
-        apiPath: `dev`,
+        apiPath: `http://localhost:3200/`,
         //devTools: true
     },
     production: {

@@ -6,7 +6,7 @@ const config = require('./config')
 module.exports = {
     mode: "development",
     devtool: "source-map",
-    entry: ['react-hot-loader/patch', './src'],
+    entry: ['./src'],
     plugins: [
         new HtmlWebpackPlugin({
             template: "src/index.html",
@@ -27,6 +27,10 @@ module.exports = {
                 }
             },
             {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
                 test: /\.(ts|tsx)?$/,
                 loader: "awesome-typescript-loader",
                 exclude: /node_modules/
@@ -40,11 +44,11 @@ module.exports = {
         filename: "bundle.js",
         publicPath: '/'
     },
-
     devServer: {
         port: 4000,
         open: true,
         hot: true,
+        contentBase: './',
         historyApiFallback: true,
     },
 }

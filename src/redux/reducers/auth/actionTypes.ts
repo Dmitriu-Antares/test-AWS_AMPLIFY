@@ -1,0 +1,9 @@
+export const UPDATE_USER_DATA = "UPDATE_USER_DATA"
+
+export const SIGN_UP_USER = 'SIGN_UP_USER'
+export const SIGN_UP_FAIL = 'SIGN_UP_FAIL'
+export const REMOVE_AUTH_ERROR = 'REMOVE_AUTH_ERROR'
+
+export const LOGIN_USER = 'LOGIN_USER'
+export const REMOVE_LOGIN_ERROR = 'REMOVE_LOGIN_ERROR'
+export const LOGIN_FAIL = 'LOGIN_FAIL'

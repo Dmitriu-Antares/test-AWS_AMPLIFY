@@ -4,16 +4,21 @@ class Api {
     private instance: any = null
     private config: any = {
         baseURL: __ENV__.apiPath,
-        timeout: 3000,
+        timeout: 1000,
+        headers: {
+            'Content-Type': 'application/json',
+        },
     }
     constructor() {
         this.activateMiddleware()
     }
-    activateMiddleware() {
+    private activateMiddleware() {
         const instance = axios.create(this.config)
         instance.interceptors.request.use(config => {
-            config.headers = {
-                Authorization: localStorage.getItem('token')
+            if(localStorage.getItem('token') !== null) {
+                config.headers = {
+                    Authorization: localStorage.getItem('token')
+                }
             }
             return config
         })
@@ -27,7 +32,7 @@ class Api {
         )
         this.instance = instance
     }
-    returnResponse(res) {
+    private returnResponse(res) {
         return res && res.data
     }
     get(path: string) {

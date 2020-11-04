@@ -4,7 +4,7 @@ FlashHiring UI
 
 ## Setup
 `yarn`
-`npm run dev`
+`yarn dev`
 
 ## structure
 - `src/api` - axios/interceptors and api request creation
@@ -24,6 +24,7 @@ FlashHiring UI
 - README.md - updating in process - done
 - add redux/thunk - done
 
+- redux devtools
 - reselect/selectors?
 - types adding to components
 - linter
